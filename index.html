@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecurityPro - أداة التقييم الأمني الشاملة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="security-badge">
+    <svg viewBox="0 0 24 24">
+      <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.2V15.7C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.8V12.3C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.2V15.7C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.8V12.3C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+        </svg>
+        <h1>SecurityPro</h1>
+      </div>
+      <p class="tagline">أداة متكاملة لتقييم أمان وجودة المواقع وفق معايير جوجل وأفضل الممارسات الأمنية</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="code">
+        <svg viewBox="0 0 24 24">
+          <path d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z"/>
+        </svg>
+        تحليل الكود
+      </button>
+      <button class="tab-btn" data-tab="scan">
+        <svg viewBox="0 0 24 24">
+          <path d="M2,4H6V2H2A2,2 0 0,0 0,4V8H2V4M22,2H18V4H22V8H24V4A2,2 0 0,0 22,2M2,16H0V20A2,2 0 0,0 2,22H6V20H2V16M22,20H18V22H22A2,2 0 0,0 24,20V16H22V20M4,8V16A2,2 0 0,0 6,18H18A2,2 0 0,0 20,16V8A2,2 0 0,0 18,6H6A2,2 0 0,0 4,8M6,8H18V16H6V8Z"/>
+        </svg>
+        فحص الموقع
+      </button>
+      <button class="tab-btn" data-tab="seo">
+        <svg viewBox="0 0 24 24">
+          <path d="M21.79,18L24,21.04L21.11,21.79L20.26,24L16.83,22.54L13.91,23.83L12.5,21.33L9.96,22.13L9.5,19.56L6.5,19.62L6.21,16.5L3.33,15.54L4.21,12.5L2,9.96L4.89,9.21L5.74,7L9.17,8.46L12.09,7.17L13.5,9.67L16.04,8.87L16.5,11.44L19.5,11.38L19.79,14.5L22.67,15.46L21.79,18M17.5,14.26L16.91,11.89L14.88,12L14.5,10.04L12.97,10.76L13.34,12.76L11.78,13.5L11.4,11.53L9.5,11.5L9.62,13.5L7.5,13.5L8.17,15.5L10.12,15.11L10.5,17.04L12.03,16.32L11.66,14.32L13.22,13.5L13.6,15.47L15.5,15.5L15.38,13.5L17.5,13.5L17.5,14.26Z"/>
+        </svg>
+        تحليل SEO
+      </button>
+      <button class="tab-btn" data-tab="checklist">
+        <svg viewBox="0 0 24 24">
+          <path d="M19,19H5V5H15V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V11H19M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"/>
+        </svg>
+        قائمة الأمان
+      </button>
+      <button class="tab-btn" data-tab="resources">
+        <svg viewBox="0 0 24 24">
+          <path d="M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M12,19C8.14,19 5,15.86 5,12C5,8.14 8.14,5 12,5C15.86,5 19,8.14 19,12C19,15.86 15.86,19 12,19M13,17H11V7H13V17Z"/>
+        </svg>
+        مصادر تعليمية
+      </button>
+    </div>
+
+    <div id="code" class="tab-content active">
+      <div class="form-group">
+        <label for="code-type">
+          <svg viewBox="0 0 24 24">
+            <path d="M14.6,16.6L19.2,12L14.6,7.4L16,6L22,12L16,18L14.6,16.6M9.4,16.6L4.8,12L9.4,7.4L8,6L2,12L8,18L9.4,16.6Z"/>
+          </svg>
+          نوع الكود
+        </label>
+        <select id="code-type">
+          <option value="auto">اكتشاف تلقائي</option>
+          <option value="html">HTML</option>
+          <option value="js">JavaScript</option>
+          <option value="php">PHP</option>
+          <option value="python">Python</option>
+          <option value="sql">SQL</option>
+          <option value="node">Node.js</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="code-input">
+          <svg viewBox="0 0 24 24">
+            <path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M6,6V18H10V16H8V8H10V6H6M16,16H14V18H18V6H14V8H16V16Z"/>
+          </svg>
+          أدخل الكود المراد تحليله
+        </label>
+        <textarea id="code-input" placeholder="الصق الكود هنا..."></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="code-file">
+          <svg viewBox="0 0 24 24">
+            <path d="M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z"/>
+          </svg>
+          أو رفع ملف
+        </label>
+        <input type="file" id="code-file" accept=".html,.js,.php,.py,.sql">
+      </div>
+      
+      <button id="analyze-code" class="btn btn-block">
+        <svg viewBox="0 0 24 24">
+          <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+        </svg>
+        بدء التحليل الأمني
+      </button>
+      
+      <div id="code-result" class="result-container" style="display: none;">
+        <div class="result-header">
+          <h3 class="result-title">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16"/>
+            </svg>
+            تقرير التحليل الأمني
+          </h3>
+          <span class="result-score">0%</span>
+        </div>
+        
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 0%">0%</div>
+        </div>
+        
+        <div class="vulnerabilities" id="code-vulnerabilities">
+          <!-- سيتم ملؤها ديناميكياً -->
+        </div>
+      </div>
+    </div>
+
+    <div id="scan" class="tab-content">
+      <div class="form-group">
+        <label for="website-url">
+          <svg viewBox="0 0 24 24">
+            <path d="M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z"/>
+          </svg>
+          رابط الموقع
+        </label>
+        <input type="url" id="website-url" placeholder="https://example.com">
+      </div>
+      
+      <div class="form-group">
+        <label>
+          <svg viewBox="0 0 24 24">
+            <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+          </svg>
+          خيارات الفحص
+        </label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="scan-options" value="security" checked>
+            الفحص الأمني
+          </label>
+          <label>
+            <input type="checkbox" name="scan-options" value="performance" checked>
+            أداء الموقع
+          </label>
+          <label>
+            <input type="checkbox" name="scan-options" value="seo" checked>
+            تحسين محركات البحث
+          </label>
+          <label>
+            <input type="checkbox" name="scan-options" value="accessibility">
+            إمكانية الوصول
+          </label>
+        </div>
+      </div>
+      
+      <button id="start-scan" class="btn btn-block">
+        <svg viewBox="0 0 24 24">
+          <path d="M2,4H6V2H2A2,2 0 0,0 0,4V8H2V4M22,2H18V4H22V8H24V4A2,2 0 0,0 22,2M2,16H0V20A2,2 0 0,0 2,22H6V20H2V16M22,20H18V22H22A2,2 0 0,0 24,20V16H22V20M4,8V16A2,2 0 0,0 6,18H18A2,2 0 0,0 20,16V8A2,2 0 0,0 18,6H6A2,2 0 0,0 4,8M6,8H18V16H6V8Z"/>
+        </svg>
+        بدء فحص الموقع
+      </button>
+      
+      <div id="scan-result" class="result-container" style="display: none;">
+        <div class="result-header">
+          <h3 class="result-title">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16"/>
+            </svg>
+            تقرير فحص الموقع
+          </h3>
+          <span class="result-score">0%</span>
+        </div>
+        
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 0%">0%</div>
+        </div>
+        
+        <div class="scan-details">
+          <div class="scan-section">
+            <h4>
+              <svg viewBox="0 0 24 24">
+                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.2V15.7C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.8V12.3C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+              </svg>
+              الأمان
+            </h4>
+            <div id="security-results" class="scan-results">
+              <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+          </div>
+          
+          <div class="scan-section">
+            <h4>
+              <svg viewBox="0 0 24 24">
+                <path d="M13,2.03V2.05L13,4.05C17.39,4.59 20.5,8.58 19.96,12.97C19.5,16.61 16.64,19.5 13,19.93V21.93C18.5,21.38 22.5,16.5 21.95,11C21.5,6.25 17.73,2.5 13,2.03M11,2.06C9.05,2.25 7.19,3 5.67,4.26L7.1,5.74C8.22,4.84 9.57,4.26 11,4.06V2.06M4.26,5.67C3,7.19 2.25,9.04 2.05,11H4.05C4.24,9.58 4.8,8.23 5.69,7.1L4.26,5.67M2.06,13C2.26,14.96 3.03,16.81 4.27,18.33L5.69,16.9C4.81,15.77 4.24,14.42 4.06,13H2.06M7.1,18.37L5.67,19.74C7.18,21 9.04,21.79 11,22V20C9.58,19.82 8.23,19.25 7.1,18.37M12.5,7V12.25L17,14.33L16.28,15.54L11,13V7H12.5Z"/>
+              </svg>
+              الأداء
+            </h4>
+            <div id="performance-results" class="scan-results">
+              <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+          </div>
+          
+          <div class="scan-section">
+            <h4>
+              <svg viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,10.5A1.5,1.5 0 0,1 13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5M7.5,10.5A1.5,1.5 0 0,1 9,12A1.5,1.5 0 0,1 7.5,13.5A1.5,1.5 0 0,1 6,12A1.5,1.5 0 0,1 7.5,10.5M16.5,10.5A1.5,1.5 0 0,1 18,12A1.5,1.5 0 0,1 16.5,13.5A1.5,1.5 0 0,1 15,12A1.5,1.5 0 0,1 16.5,10.5Z"/>
+              </svg>
+              تحسين محركات البحث
+            </h4>
+            <div id="seo-results" class="scan-results">
+              <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="seo" class="tab-content">
+      <div class="form-group">
+        <label for="seo-url">
+          <svg viewBox="0 0 24 24">
+            <path d="M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z"/>
+          </svg>
+          رابط الموقع
+        </label>
+        <input type="url" id="seo-url" placeholder="https://example.com">
+      </div>
+      
+      <div class="form-group">
+        <label>
+          <svg viewBox="0 0 24 24">
+            <path d="M21.79,18L24,21.04L21.11,21.79L20.26,24L16.83,22.54L13.91,23.83L12.5,21.33L9.96,22.13L9.5,19.56L6.5,19.62L6.21,16.5L3.33,15.54L4.21,12.5L2,9.96L4.89,9.21L5.74,7L9.17,8.46L12.09,7.17L13.5,9.67L16.04,8.87L16.5,11.44L19.5,11.38L19.79,14.5L22.67,15.46L21.79,18M17.5,14.26L16.91,11.89L14.88,12L14.5,10.04L12.97,10.76L13.34,12.76L11.78,13.5L11.4,11.53L9.5,11.5L9.62,13.5L7.5,13.5L8.17,15.5L10.12,15.11L10.5,17.04L12.03,16.32L11.66,14.32L13.22,13.5L13.6,15.47L15.5,15.5L15.38,13.5L17.5,13.5L17.5,14.26Z"/>
+          </svg>
+          خيارات تحليل SEO
+        </label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="seo-options" value="keywords" checked>
+            تحليل الكلمات المفتاحية
+          </label>
+          <label>
+            <input type="checkbox" name="seo-options" value="meta" checked>
+            تحليل العلامات الوصفية
+          </label>
+          <label>
+            <input type="checkbox" name="seo-options" value="structure" checked>
+            تحليل هيكل الصفحة
+          </label>
+          <label>
+            <input type="checkbox" name="seo-options" value="links">
+            تحليل الروابط
+          </label>
+        </div>
+      </div>
+      
+      <button id="start-seo" class="btn btn-block">
+        <svg viewBox="0 0 24 24">
+          <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+        </svg>
+        بدء تحليل SEO
+      </button>
+      
+      <div id="seo-result" class="result-container" style="display: none;">
+        <div class="result-header">
+          <h3 class="result-title">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2L1,21H23M12,6L19.53,19H4.47M11,10V14H13V10M11,16V18H13V16"/>
+            </svg>
+            تقرير تحليل SEO
+          </h3>
+          <span class="result-score">0%</span>
+        </div>
+        
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 0%">0%</div>
+        </div>
+        
+        <div class="seo-details">
+          <div class="seo-section">
+            <h4>
+              <svg viewBox="0 0 24 24">
+                <path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M15,12L10,7V10H5V14H10V17L15,12Z"/>
+              </svg>
+              العلامات الوصفية
+            </h4>
+            <div id="meta-results" class="seo-results">
+              <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+          </div>
+          
+          <div class="seo-section">
+            <h4>
+              <svg viewBox="0 0 24 24">
+                <path d="M9,13A3,3 0 0,0 12,16A3,3 0 0,0 15,13A3,3 0 0,0 12,10A3,3 0 0,0 9,13M20,19.59V8L14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18C18.45,22 18.85,21.85 19.19,21.6L14.76,17.17C13.96,17.69 13,18 12,18A5,5 0 0,1 7,13A5,5 0 0,1 12,8A5,5 0 0,1 17,13C17,14 16.69,14.96 16.17,15.75L20,19.59Z"/>
+              </svg>
+              الكلمات المفتاحية
+            </h4>
+            <div id="keywords-results" class="seo-results">
+              <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+          </div>
+          
+          <div class="seo-section">
+            <h4>
+              <svg viewBox="0 0 24 24">
+                <path d="M21,16V8H7V16H21M21,6A2,2 0 0,1 23,8V16A2,2 0 0,1 21,18H7A2,2 0 0,1 5,16V8C5,6.89 5.9,6 7,6H21M3,20H17V22H3A2,2 0 0,1 1,20V9H3V20M19,10H15V12H19V10Z"/>
+              </svg>
+              هيكل الصفحة
+            </h4>
+            <div id="structure-results" class="seo-results">
+              <!-- سيتم ملؤها ديناميكياً -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="checklist" class="tab-content">
+      <div class="checklist-intro">
+        <h3>
+          <svg viewBox="0 0 24 24">
+            <path d="M19,19H5V5H15V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V11H19M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"/>
+          </svg>
+          قائمة التحقق الأمنية
+        </h3>
+        <p>استخدم هذه القائمة للتحقق من عناصر الأمان الأساسية في موقعك. ضع علامة على العناصر التي تم تنفيذها.</p>
+      </div>
+      
+      <div class="checklist-items">
+        <div class="checklist-category">
+          <h4>
+            <svg viewBox="0 0 24 24">
+              <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.2V15.7C16,16.4 15.4,17 14.7,17H9.2C8.6,17 8,16.4 8,15.8V12.3C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+            </svg>
+            أمان عام
+          </h4>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              استخدام HTTPS في جميع الصفحات
+            </label>
+          </div>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              تحديث البرمجيات والأنظمة بانتظام
+            </label>
+          </div>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              وجود سياسة خصوصية واضحة
+            </label>
+          </div>
+        </div>
+        
+        <div class="checklist-category">
+          <h4>
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M12,19C8.14,19 5,15.86 5,12C5,8.14 8.14,5 12,5C15.86,5 19,8.14 19,12C19,15.86 15.86,19 12,19M13,17H11V7H13V17Z"/>
+            </svg>
+            أمان النماذج
+          </h4>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              التحقق من صحة المدخلات على الخادم
+            </label>
+          </div>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              حماية ضد هجمات CSRF
+            </label>
+          </div>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              حماية ضد هجمات XSS
+            </label>
+          </div>
+        </div>
+        
+        <div class="checklist-category">
+          <h4>
+            <svg viewBox="0 0 24 24">
+              <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z"/>
+            </svg>
+            إدارة المستخدمين
+          </h4>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              تطبيق سياسة كلمات مرور قوية
+            </label>
+          </div>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              تنفيذ نظام صلاحيات المستخدمين
+            </label>
+          </div>
+          <div class="checklist-item">
+            <label>
+              <input type="checkbox">
+              حماية ضد هجمات القوة الغاشمة
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <button id="save-checklist" class="btn btn-block">
+        <svg viewBox="0 0 24 24">
+          <path d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z"/>
+        </svg>
+        حفظ التقدم
+      </button>
+    </div>
+
+    <div id="resources" class="tab-content">
+      <div class="resources-intro">
+        <h3>
+          <svg viewBox="0 0 24 24">
+            <path d="M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M12,19C8.14,19 5,15.86 5,12C5,8.14 8.14,5 12,5C15.86,5 19,8.14 19,12C19,15.86 15.86,19 12,19M13,17H11V7H13V17Z"/>
+          </svg>
+          مصادر تعليمية للأمان
+        </h3>
+        <p>مجموعة من المصادر التعليمية لتحسين أمان موقعك وتطبيقاتك.</p>
+      </div>
+      
+      <div class="resource-cards">
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+            </svg>
+          </div>
+          <h4>OWASP Top 10</h4>
+          <p>أهم 10 ثغرات أمنية في تطبيقات الويب حسب منظمة OWASP.</p>
+          <a href="https://owasp.org/www-project-top-ten/" target="_blank" class="btn btn-outline">
+            زيارة الموقع
+          </a>
+        </div>
+        
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+            </svg>
+          </div>
+          <h4>أمان HTTP</h4>
+          <p>دليل Mozilla لتحسين أمان HTTP وHTTPS.</p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Security" target="_blank" class="btn btn-outline">
+            زيارة الموقع
+          </a>
+        </div>
+        
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+            </svg>
+          </div>
+          <h4>أمان الويب</h4>
+          <p>دليل Google لتحسين أمان مواقع الويب.</p>
+          <a href="https://web.dev/secure/" target="_blank" class="btn btn-outline">
+            زيارة الموقع
+          </a>
+        </div>
+        
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+            </svg>
+          </div>
+          <h4>أمان JavaScript</h4>
+          <p>أفضل الممارسات الأمنية لبرمجة JavaScript.</p>
+          <a href="https://javascript.info/security" target="_blank" class="btn btn-outline">
+            زيارة الموقع
+          </a>
+        </div>
+        
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+            </svg>
+          </div>
+          <h4>أمان PHP</h4>
+          <p>دليل أمان PHP الرسمي.</p>
+          <a href="https://www.php.net/manual/en/security.php" target="_blank" class="btn btn-outline">
+            زيارة الموقع
+          </a>
+        </div>
+        
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+            </svg>
+          </div>
+          <h4>أمان Node.js</h4>
+          <p>أفضل الممارسات الأمنية لتطبيقات Node.js.</p>
+          <a href="https://nodejs.org/en/docs/guides/security/" target="_blank" class="btn btn-outline">
+            زيارة الموقع
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="theme-toggle" id="theme-toggle">
+    <svg viewBox="0 0 24 24">
+      <path d="M12,18C11.11,18 10.26,17.8 9.5,17.45C11.56,16.5 13,14.42 13,12C13,9.58 11.56,7.5 9.5,6.55C10.26,6.2 11.11,6 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31L23.31,12L20,8.69Z"/>
+    </svg>
+  </button>
+
+  <footer>
+    <p>SecurityPro &copy; 2023 - أداة التقييم الأمني الشاملة | نسخة 3.1</p>
+    <p>تم تطوير الكود من قبل مبرمج عبد الله ندا</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="scanners/html-scanner.js"></script>
+  <script src="scanners/js-scanner.js"></script>
+  <script src="scanners/php-scanner.js"></script>
+  <script src="scanners/python-scanner.js"></script>
+  <script src="scanners/sql-scanner.js"></script>
+  <script src="scanners/node-scanner.js"></script>
+  <script src="scanners/website-scanner.js"></script>
+  <script src="scanners/seo-scanner.js"></script>
+  <script src="checklist.js"></script>
+  <script src="resources.js"></script>
+</body>
+</html>
